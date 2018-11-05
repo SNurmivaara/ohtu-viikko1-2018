@@ -65,4 +65,20 @@ public class VarastoTest {
         assertEquals(4, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
 
+    @Test
+    public void eiVoiOttaaLiikaa() {
+        varasto.lisaaVarastoon(8);
+
+        // metodin tulisi palauttaa vain varaston saldon verran
+        assertEquals(8, varasto.otaVarastosta(9), vertailuTarkkuus);
+    }
+
+    @Test
+    public void eiVoiLisätäLiikaa() {
+        varasto.lisaaVarastoon(11);
+
+        // metodin tulisi palauttaa 10 varaston koon mukaisesti
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
 }
