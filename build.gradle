@@ -15,6 +15,9 @@ apply plugin: 'application'
 // Apply JaCoCo plugin for test coverage
 apply plugin: 'jacoco'
 
+// Apply checkstyle
+apply plugin: 'checkstyle'
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
@@ -51,4 +54,8 @@ jacocoTestReport {
                     exclude: ['main/**'])
         })
     }
+}
+
+run {
+    standardInput = System.in
 }
